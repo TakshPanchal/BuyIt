@@ -8,7 +8,7 @@ import com.smartex.buyit.Utils;
 import java.util.ArrayList;
 
 public class GrossaryItems implements Parcelable {
-    private int id, popularityPoint, userPoint;
+    private int id, popularityPoint, userPoint, availableAmount;
     private String name, des, imgURL, category;
     private double prise;
     private ArrayList<Reviews> reviews;
@@ -50,6 +50,23 @@ public class GrossaryItems implements Parcelable {
                 ", prise=" + prise +
                 ", reviews=" + reviews +
                 '}';
+    }
+
+    public GrossaryItems(String name, String des, String imgURL, String category, int availableAmount, double prise) {
+        this.id = Utils.getId();
+        this.popularityPoint = 0;
+        this.userPoint = 0;
+        this.name = name;
+        this.des = des;
+        this.imgURL = imgURL;
+        this.category = category;
+        this.prise = prise;
+        this.availableAmount = availableAmount;
+        this.reviews = new ArrayList<>();
+    }
+
+    public int getAvailableAmount() {
+        return availableAmount;
     }
 
     public int getId() {
@@ -124,16 +141,8 @@ public class GrossaryItems implements Parcelable {
         this.reviews = reviews;
     }
 
-    public GrossaryItems(String name, String des, String imgURL, String category, double prise) {
-        this.id = Utils.getId();
-        this.popularityPoint = 0;
-        this.userPoint = 0;
-        this.name = name;
-        this.des = des;
-        this.imgURL = imgURL;
-        this.category = category;
-        this.prise = prise;
-        this.reviews = new ArrayList<>();
+    public void setAvailableAmount(int availableAmount) {
+        this.availableAmount = availableAmount;
     }
 
     @Override

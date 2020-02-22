@@ -5,6 +5,58 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNavVIew"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvNewItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Item" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recViewNewItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNewItem" />
+
+            <TextView
+                android:id="@+id/tvPopularItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recViewNewItem"
+                android:layout_marginTop="5dp"
+                android:text="Popular Item" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recViewPopularItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvPopularItem" />
+
+            <TextView
+                android:id="@+id/tvSuggestedItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recViewPopularItem"
+                android:layout_marginTop="5dp"
+                android:text="Suggested Item" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recViewSuggested"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSuggestedItem" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavVIew"
         android:layout_width="match_parent"
